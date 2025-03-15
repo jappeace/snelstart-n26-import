@@ -3,7 +3,7 @@
 
 -- | Go from various formats to snelstart (ing)
 module SnelstartImport.Convert
-  ( toING
+  ( n26ToING
   )
 where
 
@@ -12,8 +12,8 @@ import SnelstartImport.N26
 import Data.Text(Text)
 
 
-toING :: Text -> N26 -> ING
-toING ownAccoun N26{..} = ING {
+n26ToING :: Text -> N26 -> ING
+n26ToING ownAccoun N26{..} = ING {
   datum = unDate date,
   naamBescrhijving = payee,
   rekening = ownAccoun,

@@ -47,6 +47,6 @@ convertCli options = do
     Left x -> error x
     Right n26Vec -> BS.writeFile (cliOutputFile options) $ let
         n26 :: [ING]
-        n26 = toING (cliOwnAccount options) <$> toList n26Vec
+        n26 = n26ToING (cliOwnAccount options) <$> toList n26Vec
       in
         writeCsv n26
